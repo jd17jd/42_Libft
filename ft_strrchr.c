@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 19:31:55 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:49:17 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:15:07 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)(s + len));
 		len--;
 	}
-	return (0);
+	return (NULL);
 }

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 11:37:01 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/10/09 00:19:44 by jvivas-g         ###   ########.fr       */
+/*   Created: 2023/10/09 00:53:55 by jvivas-g          #+#    #+#             */
+/*   Updated: 2023/10/09 01:30:56 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Writes "n" zero bytes starting at "str".
- * If "n" is zero, the function does nothing. 
- * @param str String to be filled
- * @param n Number of bytes to zero
-*/
-void	ft_bzero(void *str, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_memset(str, 0, n);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst -> next;
+	return (lst);
 }

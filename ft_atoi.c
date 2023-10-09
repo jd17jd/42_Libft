@@ -6,11 +6,19 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 01:22:38 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/19 18:45:15 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:15:46 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	static	ft_space(char c)
+{
+	return (
+		c == ' ' || c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r'
+	);
+}
 
 /**
  * Converts the the string pointed to by "str" to int.
@@ -21,25 +29,25 @@
 */
 int	ft_atoi(const char *str)
 {
+	int	i;
 	int	res;
 	int	sign;
 
+	i = 0;
 	res = 0;
 	sign = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\r' || *str == '\v' || *str == '\f')
-		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
+	while (str[i] && ft_space(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
-		str++;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	while (ft_isdigit(*str))
+	while (ft_isdigit(str[i]))
 	{
-		res = res * 10 + *str - '0';
-		str++;
+		res = res * 10 + str[i] - '0';
+		i++;
 	}
 	return (res * sign);
 }

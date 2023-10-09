@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:37:38 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:14:07 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:00:58 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	res = (char **) malloc(sizeof(char *) * (count_substrs(s, c) + 1));
 	if (!res)
-	{
-		free(res);
 		return (NULL);
-	}
 	res[count_substrs(s, c)] = NULL;
 	i = 0;
 	while (i < count_substrs(s, c))

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jvivas-g <jvivas-g@student.42.fr>          +#+  +:+       +#+         #
+#    By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/26 18:38:00 by jvivas-g          #+#    #+#              #
-#    Updated: 2023/01/27 17:02:08 by jvivas-g         ###   ########.fr        #
+#    Updated: 2023/10/09 01:27:21 by jvivas-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,24 +21,46 @@ SOURCES = \
 		ft_split.c \
 		ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 		ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
-		ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
+		ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+		
+BONUS = \
+		ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+		ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
 
-OBJECTS = $(SOURCES:.c=.o)
+INCLUDE = libft.h
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
-all: $(NAME)
+%.o: %.c ${INCLUDE}
+		@echo "Compiling\n"
+		@${CC} ${CFLAGS} -c $< -o $@
+		
+		
+OBJECTS = ${SOURCES:.c=.o}
+BONUS_OBJECTS = ${BONUS:.c=.o}
 
-$(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+
+${NAME}: ${OBJECTS} $(INCLUDE)
+		@ar -rsc ${NAME} ${OBJECTS}
+		@echo "Created $(NAME)\n"
+	
+bonus: ${OBJECTS} ${BONUS_OBJECTS} $(INCLUDE)
+		@ar -rsc $(NAME) $^
+		@echo "Bonus compiled correctly $(NAME)\n"
+
+all: ${NAME}
 
 clean:
-	rm -f $(OBJECTS)
+		@${RM} ${OBJECTS} ${BONUS_OBJECTS}
+		@echo "All objects cleaned\n"
 
 fclean: clean
-	rm -f $(NAME)
+		@${RM} ${NAME}
+		@${RM} bonus
+		@echo "All executable cleaned\n"
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:02:06 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:12:52 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:00:29 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,7 @@ char	*ft_itoa(int n)
 	n *= sign;
 	res = aux_str(n, len);
 	if (!res)
-	{
-		free(res);
 		return (NULL);
-	}
 	if (sign == -1)
 		res[0] = '-';
 	return (res);

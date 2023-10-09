@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:17:32 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:51:33 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:14:01 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 
 	if (!s1 || !set)
-		return (0);
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))

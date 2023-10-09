@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:17:17 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:19:15 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:10:58 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,21 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*res;
-	unsigned int	len;
 	unsigned int	i;
+	unsigned int	len;
 
+	i = 0;
 	len = ft_strlen(s);
+	if (!s || !f)
+		return (NULL);
 	res = (char *) malloc(sizeof(char) * (len + 1));
 	if (!res)
-	{
-		free(res);
-		return (0);
-	}
-	i = 0;
+		return (NULL);
 	while (i < len)
 	{
 		res[i] = (*f)(i, s[i]);
 		i++;
 	}
-	res[len] = 0;
+	res[len] = '\0';
 	return (res);
 }

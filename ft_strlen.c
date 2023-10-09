@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:57:57 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:45:44 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:55:33 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,10 @@
  */
 size_t	ft_strlen(const char *s)
 {
-	size_t	res;
+	size_t	i;
 
-	res = 0;
-	while (*s)
-	{
-		res++;
-		s++;
-	}
-	return (res);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

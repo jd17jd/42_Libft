@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:17:40 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 01:08:10 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:15:47 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*res;
 	size_t	len_s;
 
+	res = 0;
 	if (!s)
 		return (NULL);
 	len_s = ft_strlen(s);

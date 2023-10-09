@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 11:37:01 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/10/09 00:19:44 by jvivas-g         ###   ########.fr       */
+/*   Created: 2023/10/09 00:58:48 by jvivas-g          #+#    #+#             */
+/*   Updated: 2023/10/09 01:31:44 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Writes "n" zero bytes starting at "str".
- * If "n" is zero, the function does nothing. 
- * @param str String to be filled
- * @param n Number of bytes to zero
-*/
-void	ft_bzero(void *str, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	ft_memset(str, 0, n);
+	t_list	*res;
+	t_list	*elto;
+	void	*content;
+
+	res = NULL;
+	while (lst)
+	{
+		content = f(lst->content);
+		elto = ft_lstnew(content);
+		if (!elto)
+		{
+			free(content);
+			ft_lstclear(&res, del);
+			return (0);
+		}
+		ft_lstadd_back(&res, elto);
+		lst = lst -> next;
+	}
+	return (res);
 }

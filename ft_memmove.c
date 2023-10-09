@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:12:44 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:51:52 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:42:59 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,16 @@
 */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char		*aux_dest;
-	unsigned const char	*aux_src;
-
 	if (!dst && !src)
 		return (NULL);
-	aux_dest = (unsigned char *)dst;
-	aux_src = (unsigned const char *)src;
-	if (aux_dest < aux_src)
+	if (dst < src)
 		return (ft_memcpy(dst, src, len));
 	else
 	{
 		while (len > 0)
 		{
 			len--;
-			aux_dest[len] = aux_src[len];
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
 		}
 	}
 	return (dst);

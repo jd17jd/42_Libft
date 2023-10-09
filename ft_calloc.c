@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 19:55:53 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:34:10 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:59:04 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,9 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
-	res = malloc(count * size);
+	res = (void *)malloc(count * size);
 	if (!res)
-	{
-		free(res);
 		return (NULL);
-	}
 	ft_bzero(res, (count * size));
 	return (res);
 }

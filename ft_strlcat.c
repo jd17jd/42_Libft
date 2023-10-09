@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:42:25 by jvivas-g          #+#    #+#             */
-/*   Updated: 2023/04/07 00:44:17 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:06:38 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
  */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t	res;
 	size_t	i;
 	size_t	j;
-	size_t	res;
 
 	i = 0;
 	j = 0;
