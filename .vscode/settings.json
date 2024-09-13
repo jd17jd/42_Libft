@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "ft_lstadd_front.C": "cpp",
-        "sstream": "c"
-    },
-    "C_Cpp.errorSquiggles": "enabled"
-}
