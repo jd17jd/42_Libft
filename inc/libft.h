@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:23:01 by jvivas-g          #+#    #+#             */
-/*   Updated: 2024/10/07 19:31:50 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2024/10/07 20:29:19 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <stdarg.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+# define SEEK_SET 0
+# define SEEK_CUR 1
+# define SEEK_END 2
 
 typedef struct s_list
 {
