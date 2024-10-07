@@ -6,7 +6,7 @@
 /*   By: jvivas-g <jvivas-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 18:55:25 by jvivas-g          #+#    #+#             */
-/*   Updated: 2024/10/07 19:32:26 by jvivas-g         ###   ########.fr       */
+/*   Updated: 2024/10/07 19:50:20 by jvivas-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**ft_dup_matrix(char **matrix)
 		i++;
 	res = (char **)ft_calloc(i + 1, sizeof(char *));
 	if (!res)
-        return (NULL);
+		return (NULL);
 	i = 0;
 	while (matrix[i])
 	{
